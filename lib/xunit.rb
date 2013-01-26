@@ -1,5 +1,6 @@
 require "xunit/version"
 
 module Xunit
-  # Your code goes here...
+  autoload :TestCase, "xunit/test_case"
+  autoload :TestResult, "xunit/test_result"
 end
