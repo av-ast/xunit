@@ -1,4 +1,4 @@
-require "./test/test_helper.rb"
+require "test_helper"
 
 class FirstTest < Xunit::TestCase
   test "assert_true" do
