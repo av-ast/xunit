@@ -1,4 +1,5 @@
 require "xunit/version"
+require "active_support/inflector"
 
 module Xunit
   autoload :TestRunner, "xunit/test_runner"
