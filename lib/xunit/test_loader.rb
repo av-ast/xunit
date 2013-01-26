@@ -4,10 +4,8 @@ module Xunit
     class << self
       def load_test_files
         files = search_test_files
-        files.each do |file|
-          require "./#{file}"
-          klass = get_class_by_file_path(file)
-          puts "Test class: #{klass}"
+        files.map do |file|
+          get_test_instance(file)
         end
       end
     end
@@ -23,6 +21,14 @@ module Xunit
         file_name = File.basename(file_path,File.extname(file_path))
         file_name.camelize.constantize 
       end
+
+      def get_test_instance(file)
+        require "./#{file}" # TODO
+        klass = get_class_by_file_path(file)
+        puts "Test class: #{klass}"
+        klass.new
+      end
+
     end
 
   end
