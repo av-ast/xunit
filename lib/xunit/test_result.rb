@@ -17,8 +17,10 @@ module Xunit
       putc case result[:status]
       when true
         '.'
-      else
+      when false
         'F'
+      else
+        'E'
       end
     end
 

@@ -9,12 +9,12 @@ class FirstTest < Xunit::TestCase
     assert false
   end
 
-  test
+  #test
 
   test "without block"
 
-  test "empty_test" do
-  end
+  #test "empty_test" do
+  #end
 
 end
 

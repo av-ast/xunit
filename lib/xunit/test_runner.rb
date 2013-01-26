@@ -11,8 +11,17 @@ module Xunit
             result = {
               klass: inst.class.name,
               method: inst_method,
-              status: inst.send(inst_method)
+              status: nil
             }
+            begin
+              result[:status] = inst.send(inst_method)
+            rescue Exception => e
+              result[:message] = e.message
+              result[:backtrace] = e.backtrace
+
+              puts result[:message]
+              puts result[:backtrace]
+            end
             test_result << result
           end
         end

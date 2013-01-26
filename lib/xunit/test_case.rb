@@ -3,10 +3,10 @@ module Xunit
     class << self
       def test(name=nil, &block)
         raise "BlankTestName" if name.blank?
-        raise "EmptyBlock" unless block_given?
 
         class_eval do
           define_method "#{name}_test" do
+            raise "Block is empty" unless block_given?
             yield
           end
         end
