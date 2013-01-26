@@ -3,8 +3,7 @@ module Xunit
 
     class << self
       def load_test_files
-        files = search_test_files
-        files.map do |file|
+        search_test_files.map do |file|
           get_test_instance(file)
         end
       end

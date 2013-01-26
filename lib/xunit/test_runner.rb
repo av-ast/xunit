@@ -18,14 +18,10 @@ module Xunit
             rescue Exception => e
               result[:message] = e.message
               result[:backtrace] = e.backtrace
-
-              puts result[:message]
-              puts result[:backtrace]
             end
             test_result << result
           end
         end
-        p test_result.results
       end
     end
 
